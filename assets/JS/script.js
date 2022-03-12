@@ -125,17 +125,23 @@ function writePassword() {
 
   // Prompt for length of requested password
   function lengthPrompt() {
-    var min = passwordLength < 8;
-    var max = passwordLength > 128;
+    const min = 8;
+    const max = 128;
     passwordLength = prompt("How long should your password be? (8-128)", "16");
     if (passwordLength === null) {
       alert("Request cancelled.");
       return;
     }
-    if (min || max) {
+
+    if (passwordLength < min) {
       alert("Please input a value between 8 and 128");
       lengthPrompt();
-    } else {
+    } 
+    if (passwordLength > max) {
+      alert("Please input a value between 8 and 128");
+      lengthPrompt();
+    } 
+    else {
       confirmation();
     }
   }
@@ -181,9 +187,8 @@ function writePassword() {
     function generatePassword() {
       for (let index = 0; index < passwordLength; index++) {
         var random = Math.floor(Math.random() * variableSplit.length);
-        console.log(random);
+
         password += variableSplit[random];
-        console.log(password);
         passwordText.value = password;
       }
       variables = "";
