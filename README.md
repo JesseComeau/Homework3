@@ -1,5 +1,5 @@
 # Homework3
-Bootcamp - Phase 1 - Week 4 Homework
+Bootcamp - Phase 1 - Week 3 Homework
 
 Created a password generator. 
   Mulitple prompts to select parameters (lower case letters, upper case letters, numerals, special characters, length)
